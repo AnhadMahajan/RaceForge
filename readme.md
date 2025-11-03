@@ -1,121 +1,115 @@
 # RaceForge-AI
 
-Monorepo containing the RaceForge-AI frontend, Python services, and 3D model tools.
+RaceForge-AI is an innovative project that combines AI-powered 3D model generation with an interactive racing game experience. The project allows users to create custom 3D car models using AI and then use them in a racing game environment.
 
-## Contents
+## 🚀 Features
 
-- [3d-model-generator](3d-model-generator/) — Next.js 3D model generation UI and utilities. See [3d-model-generator/README.md](3d-model-generator/README.md).
-- [Frontend](Frontend/) — Main web frontend (Vite + React + TypeScript).
-  - Frontend entry: [Frontend/package.json](Frontend/package.json)
-  - Frontend app root: [Frontend/src/main.tsx](Frontend/src/main.tsx)
-  - Example page for model generation: [Frontend/src/pages/generatemodel.tsx](Frontend/src/pages/generatemodel.tsx)
-  - Example 3D component: [Frontend/src/components/CarModel.tsx](Frontend/src/components/CarModel.tsx)
-  - Backend server (in repo frontend/backend): [Frontend/backend/server.js](Frontend/backend/server.js)
-- [flaskk](flaskk/) — Python Flask utilities and scripts for converting images/text to 3D.
-  - Flask app: [flaskk/app.py](flaskk/app.py)
-  - Image-to-3D script: [flaskk/image_to_3d.py](flaskk/image_to_3d.py)
-  - Text-to-3D script: [flaskk/textto3d.py](flaskk/textto3d.py)
-- [racing-game](racing-game/) — (game project folder)
+- AI-powered 3D model generation from text descriptions or images
+- Interactive 3D model viewer
+- Real-time racing game environment
+- Custom car model integration
+- Responsive web interface
+- Server-side model processing
 
-## Quickstart
+## 🏗️ Project Structure
 
-Prereqs:
-- Node 18+ (or Bun if you use bun.lockb) for frontend
-- Python 3.8+ and virtualenv for Flask services
-- pnpm / npm as preferred package manager
+The project consists of four main components:
 
-Frontend:
-1. cd Frontend
-2. Install: `npm install` (or `pnpm install` / `bun install`)
-3. Start dev server: `npm run dev`
-4. Backend mock server: cd Frontend/backend && `npm install` && `node server.js` (see [Frontend/backend/server.js](Frontend/backend/server.js))
+1. **3D Model Generator** (Next.js Frontend)
+   - AI-powered 3D model generation interface
+   - Real-time model preview
+   - User input handling for text and image uploads
 
-Flask services:
-1. cd flaskk
-2. Create venv: `python -m venv env && source env/bin/activate` (Windows: `env\Scripts\activate`)
-3. Install deps: `pip install -r requirements.txt`
-4. Run: `python app.py` (exposes Flask API — see [flaskk/app.py](flaskk/app.py))
-5. Scripts: [flaskk/image_to_3d.py](flaskk/image_to_3d.py) and [flaskk/textto3d.py](flaskk/textto3d.py) are utilities used by the service.
+2. **Flask Backend**
+   - Handles AI model processing
+   - Converts text/images to 3D models
+   - Uses ShapeE AI models
 
-3D Model Generator (Next.js):
-1. cd 3d-model-generator
-2. Install: `npm install`
-3. Dev: `npm run dev`
-4. See [3d-model-generator/README.md](3d-model-generator/README.md) for details.
+3. **Main Frontend** (Vite + React)
+   - User interface for the main application
+   - Model management and preview
+   - Game integration interface
 
-## Project layout (high level)
-- 3d-model-generator/ — Next.js + 3D utilities
-- Frontend/ — Vite React app + a simple backend
-  - [Frontend/src/pages/generatemodel.tsx](Frontend/src/pages/generatemodel.tsx)
-  - [Frontend/src/components/CarModel.tsx](Frontend/src/components/CarModel.tsx)
-- flaskk/ — Flask app & helper scripts
-  - [flaskk/app.py](flaskk/app.py)
-  - [flaskk/image_to_3d.py](flaskk/image_to_3d.py)
-  - [flaskk/textto3d.py](flaskk/textto3d.py)
+4. **Racing Game** (Three.js)
+   - 3D racing environment
+   - Physics engine integration
+   - Custom car model support
 
-## Notes
-- Use the example pages and components in [Frontend/src/](Frontend/src/) to see how the frontend integrates with the backend.
-- For seeding sample data, check [Frontend/backend/scripts/seedCars.js](Frontend/backend/scripts/seedCars.js).
-- Adjust environment variables in [Frontend/.env](Frontend/.env) and [Frontend/backend/.env](Frontend/backend/.env).
+## 🛠️ Tech Stack
 
-If you want, I can:
-- generate README sections per subproject,
-- add run/debug launch configs for VS Code,
-- or create a CONTRIBUTING.md.
+- **Frontend**: React, Next.js, Three.js, TypeScript
+- **Backend**: Flask, Node.js, Express
+- **AI Models**: ShapeE
+- **3D Graphics**: Three.js
+- **Styling**: Tailwind CSS
+- **Build Tools**: Vite, Node.js
 
-```// filepath: README.md
-# RaceForge-AI
+## 📋 Prerequisites
 
-Monorepo containing the RaceForge-AI frontend, Python services, and 3D model tools.
+- Node.js 18.x or higher
+- Python 3.8 or higher
+- CUDA-compatible GPU (recommended for AI model processing)
 
-## Contents
+## 🚀 Getting Started
 
-- [3d-model-generator](3d-model-generator/) — Next.js 3D model generation UI and utilities. See [3d-model-generator/README.md](3d-model-generator/README.md).
-- [Frontend](Frontend/) — Main web frontend (Vite + React + TypeScript).
-  - Frontend entry: [Frontend/package.json](Frontend/package.json)
-  - Frontend app root: [Frontend/src/main.tsx](Frontend/src/main.tsx)
-  - Example page for model generation: [Frontend/src/pages/generatemodel.tsx](Frontend/src/pages/generatemodel.tsx)
-  - Example 3D component: [Frontend/src/components/CarModel.tsx](Frontend/src/components/CarModel.tsx)
-  - Backend server (in repo frontend/backend): [Frontend/backend/server.js](Frontend/backend/server.js)
-- [flaskk](flaskk/) — Python Flask utilities and scripts for converting images/text to 3D.
-  - Flask app: [flaskk/app.py](flaskk/app.py)
-  - Image-to-3D script: [flaskk/image_to_3d.py](flaskk/image_to_3d.py)
-  - Text-to-3D script: [flaskk/textto3d.py](flaskk/textto3d.py)
-- [racing-game](racing-game/) — (game project folder)
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/RaceForge-AI.git
+cd RaceForge-AI
+```
 
-## Quickstart
+2. Set up the Flask backend:
+```bash
+cd flaskk
+python -m venv env
+source env/bin/activate  # On Windows: .\env\Scripts\activate
+pip install -r requirements.txt
+python app.py
+```
 
-Prereqs:
-- Node 18+ (or Bun if you use bun.lockb) for frontend
-- Python 3.8+ and virtualenv for Flask services
-- pnpm / npm as preferred package manager
+3. Set up the 3D model generator:
+```bash
+cd ../3d-model-generator
+npm install
+npm run dev
+```
 
-Frontend:
-1. cd Frontend
-2. Install: `npm install` (or `pnpm install` / `bun install`)
-3. Start dev server: `npm run dev`
-4. Backend mock server: cd Frontend/backend && `npm install` && `node server.js` (see [Frontend/backend/server.js](Frontend/backend/server.js))
+4. Set up the main frontend:
+```bash
+cd ../Frontend
+npm install
+npm run dev
+```
 
-Flask services:
-1. cd flaskk
-2. Create venv: `python -m venv env && source env/bin/activate` (Windows: `env\Scripts\activate`)
-3. Install deps: `pip install -r requirements.txt`
-4. Run: `python app.py` (exposes Flask API — see [flaskk/app.py](flaskk/app.py))
-5. Scripts: [flaskk/image_to_3d.py](flaskk/image_to_3d.py) and [flaskk/textto3d.py](flaskk/textto3d.py) are utilities used by the service.
+5. Set up the racing game:
+```bash
+cd ../racing-game
+npm install
+npm run dev
+```
 
-3D Model Generator (Next.js):
-1. cd 3d-model-generator
-2. Install: `npm install`
-3. Dev: `npm run dev`
-4. See [3d-model-generator/README.md](3d-model-generator/README.md) for details.
+## 💻 Usage
 
-## Project layout (high level)
-- 3d-model-generator/ — Next.js + 3D utilities
-- Frontend/ — Vite React app + a simple backend
-  - [Frontend/src/pages/generatemodel.tsx](Frontend/src/pages/generatemodel.tsx)
-  - [Frontend/src/components/CarModel.tsx](Frontend/src/components/CarModel.tsx)
-- flaskk/ — Flask app & helper scripts
-  - [flaskk/app.py](flaskk/app.py)
-  - [flaskk/image_to_3d.py](flaskk/image_to_3d.py)
-  - [flaskk/textto3d.py](flaskk/textto3d.py)
+1. Access the 3D model generator at `http://localhost:3000`
+2. Create your custom car model using text descriptions or image uploads
+3. Preview and adjust the generated 3D model
+4. Save your model and launch the racing game
+5. Use your custom car in the racing environment
 
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- ShapeE AI model for 3D generation
+- Three.js community
+- React and Next.js teams
+
+## 📞 Contact
+
+For questions and support, please open an issue in the GitHub repository.
