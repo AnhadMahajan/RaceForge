@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* F1 Racing Theme - Dark Mode */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 20% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 20% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Racing Red Primary */
+    --primary: 0 100% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Dark Red Secondary */
+    --secondary: 0 30% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 10% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Neon Yellow Accent */
+    --accent: 54 100% 50%;
+    --accent-foreground: 0 0% 10%;
+
+    /* Electric Blue */
+    --electric: 187 100% 50%;
+    --electric-foreground: 0 0% 10%;
+
+    /* Chrome Silver */
+    --chrome: 0 0% 75%;
+    --chrome-foreground: 0 0% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 20% 15%;
+    --input: 0 20% 15%;
+    --ring: 0 100% 43%;
+
+    --radius: 0.75rem;
+
+    /* Racing Gradients */
+    --gradient-racing: linear-gradient(135deg, hsl(0 0% 4%) 0%, hsl(0 40% 8%) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(0 100% 43%) 0%, hsl(0 80% 35%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(0 100% 43% / 0.3) 0%, transparent 70%);
+    
+    /* Glass Effect */
+    --glass-bg: hsl(0 0% 100% / 0.05);
+    --glass-border: hsl(0 0% 100% / 0.1);
+    --glass-shadow: 0 8px 32px 0 hsl(0 0% 0% / 0.37);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
