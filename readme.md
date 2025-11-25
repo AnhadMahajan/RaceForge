@@ -1,6 +1,6 @@
 # RaceForge-AI
 
-RaceForge-AI is an innovative project that combines AI-powered 3D model generation with an interactive racing game experience. The project allows users to create custom 3D car models using AI and then use them in a racing game environment.
+RaceForge-AI is an innovative project that combines AI-powered 3D model generation with an interactive racing game experience. The project allows users to create custom 3D car models using AI and then use them in a racing game environment.  
 
 ## 🚀 Features
 
